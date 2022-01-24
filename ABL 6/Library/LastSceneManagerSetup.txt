@@ -1,0 +1,5 @@
+sceneSetups:
+- path: Assets/DigitalSalmon/C360/Example Tour/Tour.unity
+  isLoaded: 1
+  isActive: 1
+  isSubScene: 0
