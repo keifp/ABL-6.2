@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace DigitalSalmon.C360 {
 	[AddComponentMenu("Complete 360 " + "Tour/Camera/Mouse Look")]
@@ -65,9 +66,13 @@ namespace DigitalSalmon.C360 {
 		protected void Update() {
 			Quaternion targetOrientation = Quaternion.Euler(targetDirection);
 
-			Vector2 mouseDelta = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
-
-			if (requireButton == RequiredButtons.LeftMouse && !Input.GetMouseButton(0) || requireButton == RequiredButtons.RightMouse && !Input.GetMouseButton(1)) {
+			//Vector2 mouseDelta = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
+			Vector2 mouseDelta = Mouse.current.delta.ReadValue();
+			bool leftMouseClick = Mouse.current.leftButton.isPressed;
+			bool rightMouseClick = Mouse.current.rightButton.isPressed;
+			
+			if (requireButton == RequiredButtons.LeftMouse && !leftMouseClick 
+			    || requireButton == RequiredButtons.RightMouse && !rightMouseClick) {
 				mouseDelta = Vector2.zero;
 			}
 

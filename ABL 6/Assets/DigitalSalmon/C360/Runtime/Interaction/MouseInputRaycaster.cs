@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace DigitalSalmon.C360 {
 	[AddComponentMenu("Complete 360 Tour/Input/Mouse Input Raycaster")]
@@ -8,13 +9,14 @@ namespace DigitalSalmon.C360 {
 		[SerializeField]
 		protected bool clickToSubmit;
 		
-		protected override Vector2 GetInputPosition() => Input.mousePosition;
+		protected override Vector2 GetInputPosition() => Mouse.current.position.ReadValue();
 
 		protected void Update() {
-			if (Input.GetMouseButtonDown(0) && clickToSubmit) {
+			if(Mouse.current.leftButton.isPressed && clickToSubmit) {
+			//if (Input.GetMouseButtonDown(0) && clickToSubmit) {
 				if (CurrentInteractable != null) {
 					CurrentInteractable.Submit();
-				}
+				}	
 			}
 		}
 
