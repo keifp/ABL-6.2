@@ -49,6 +49,10 @@ namespace DigitalSalmon.C360 {
 		// Protected Methods:
 		//-----------------------------------------------------------------------------------------
 
-		protected void InvokeMediaSwitch(TransitionState state, Node node) { MediaSwitch.InvokeSafe(state, node); }
+		protected void InvokeMediaSwitch(TransitionState state, Node node)
+		{
+			print("switching scenes");
+			MediaSwitch.InvokeSafe(state, node);
+		}
 	}
 }
