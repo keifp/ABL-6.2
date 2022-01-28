@@ -6,7 +6,9 @@ using UnityEngine;
 
 namespace DigitalSalmon.C360 {
 	[AddComponentMenu("Complete 360 Tour/Transition/Media Transition")]
-	public abstract class MediaTransition : BaseBehaviour {
+	public abstract class MediaTransition : BaseBehaviour
+	{
+		private bool playingSound;
 		//-----------------------------------------------------------------------------------------
 		// Events:
 		//-----------------------------------------------------------------------------------------
@@ -51,7 +53,17 @@ namespace DigitalSalmon.C360 {
 
 		protected void InvokeMediaSwitch(TransitionState state, Node node)
 		{
-			print("switching scenes");
+			if(state == TransitionState.BeforeSwitch)
+			{
+				if (!playingSound)
+				{
+					FindObjectOfType<AudioManager>().PlayTransition();
+					playingSound = true;
+				}
+			}
+			if (state == TransitionState.AfterSwitch) playingSound = false;
+
+
 			MediaSwitch.InvokeSafe(state, node);
 		}
 	}

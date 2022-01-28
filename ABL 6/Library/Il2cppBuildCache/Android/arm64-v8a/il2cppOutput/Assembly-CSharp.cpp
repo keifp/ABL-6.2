@@ -921,6 +921,7 @@ IL2CPP_EXTERN_C String_t* _stringLiteral0916403ED2905DEFDA70B56F89B177732926E5C2
 IL2CPP_EXTERN_C String_t* _stringLiteral1DB0C2550282EB5468089183ECB4DA9F9CE77B40;
 IL2CPP_EXTERN_C String_t* _stringLiteral239CEC52D0AC172B2A87135CD33E08CDF2001319;
 IL2CPP_EXTERN_C String_t* _stringLiteral287BEA7ABE18AC85011F0D99F8643F590C46B5B4;
+IL2CPP_EXTERN_C String_t* _stringLiteral2F95A2E48EE61CD5559F624B63E2D8CA2F8B0882;
 IL2CPP_EXTERN_C String_t* _stringLiteral3639D784B0D632459623675785F45EC6B8278361;
 IL2CPP_EXTERN_C String_t* _stringLiteral43911801D9B5B0B9AE942ABB92B1AE523872EEEA;
 IL2CPP_EXTERN_C String_t* _stringLiteral45ABB9CCE315792527F1FB93BD11632791565DBD;
@@ -22630,6 +22631,8 @@ inline bool Enumerable_Any_TisRuntimeObject_m4EC05D3E15710E112A6399BED7BC82A128B
 {
 	return ((  bool (*) (RuntimeObject*, const RuntimeMethod*))Enumerable_Any_TisRuntimeObject_m4EC05D3E15710E112A6399BED7BC82A128B5DED4_gshared)(___source0, method);
 }
+// System.Void UnityEngine.MonoBehaviour::print(System.Object)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MonoBehaviour_print_m4F113B89EC1C221CAC6EC64365E6DAD0AF86F090 (RuntimeObject * ___message0, const RuntimeMethod* method);
 // System.Void System.Collections.Generic.HashSet`1<System.Object>::.ctor()
 inline void HashSet_1__ctor_m2CDA40DEC2900A9CB00F8348FF386DF44ABD0EC7 (HashSet_1_t680119C7ED8D82AED56CDB83DF6F0E9149852A9B * __this, const RuntimeMethod* method)
 {
@@ -30928,15 +30931,18 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MediaTransition_InvokeMediaSwitch_mE2F6B
 	if (!s_Il2CppMethodInitialized)
 	{
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&EventHandlerExtensions_InvokeSafe_TisTransitionState_tFEDCD507F10162E606237559DEE55AD11B20F578_TisNode_t0F433518B0A95D0B669A5B9AE65CCC8A03EC459F_mE09B45CE76C1DB907E9BE87980E8528DA80022B6_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral2F95A2E48EE61CD5559F624B63E2D8CA2F8B0882);
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		// protected void InvokeMediaSwitch(TransitionState state, Node node) { MediaSwitch.InvokeSafe(state, node); }
+		// print("switching scenes");
+		MonoBehaviour_print_m4F113B89EC1C221CAC6EC64365E6DAD0AF86F090(_stringLiteral2F95A2E48EE61CD5559F624B63E2D8CA2F8B0882, /*hidden argument*/NULL);
+		// MediaSwitch.InvokeSafe(state, node);
 		EventHandler_2_t135266F62D01465A2429EB52FEE724148C22BB0D * L_0 = __this->get_MediaSwitch_17();
 		int32_t L_1 = ___state0;
 		Node_t0F433518B0A95D0B669A5B9AE65CCC8A03EC459F * L_2 = ___node1;
 		EventHandlerExtensions_InvokeSafe_TisTransitionState_tFEDCD507F10162E606237559DEE55AD11B20F578_TisNode_t0F433518B0A95D0B669A5B9AE65CCC8A03EC459F_mE09B45CE76C1DB907E9BE87980E8528DA80022B6(L_0, L_1, L_2, /*hidden argument*/EventHandlerExtensions_InvokeSafe_TisTransitionState_tFEDCD507F10162E606237559DEE55AD11B20F578_TisNode_t0F433518B0A95D0B669A5B9AE65CCC8A03EC459F_mE09B45CE76C1DB907E9BE87980E8528DA80022B6_RuntimeMethod_var);
-		// protected void InvokeMediaSwitch(TransitionState state, Node node) { MediaSwitch.InvokeSafe(state, node); }
+		// }
 		return;
 	}
 }
