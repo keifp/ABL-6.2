@@ -58,8 +58,6 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
-ABL 6/Library/Artifacts/*
 *.log
-ABL 6/Library/ShaderCache/*
 ABL 6/Temp/*
 ABL 6/obj/Debug/*
